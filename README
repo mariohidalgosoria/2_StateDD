@@ -1,0 +1,36 @@
+Programs for simulating a two state diffusing diffusivity model
+## The code enclosed was developed by M. Hidalgo-Soria
+## Contact mariohidalgosoria@gmail.com
+### A particle follows a pure diffusion process, changing
+intermittently between two different diffusion coefficients
+D_{+}>D_{-}. Each diffusion coefficient is followed during a
+random waiting time with the same distribution but with different
+parameters. The process starts from equilibrium initial conditions. 
+
+
+1) Uniform distributed waiting times.
+-> The C program MXUni.c generates trajectories of a two state
+system with D_{+}=10 and D_{-}=0. Uniform distributed waiting times,
+for the state D_{+} the waiting times have uniform distribution
+between zero and five. For the state D_{-} the waiting times have
+a uniform distribution between zero and ten. The program gives as
+an output the file 'Xpap0bp5am0bm10T1.dat' with the final positions.
+And the file 'Ppap0bp5am0bm10T1.dat' with the fraction occupation times.
+
+->Compile & Run as:
+gcc -o MXUni MXUni.c -lm
+./MXUni
+
+
+2) Gamma distributed waiting times.
+-> The C program MXGamma.c generates trajectories of a two state
+system with D_{+}=10 and D_{-}=0. Gamma distributed waiting times,
+for the state D_{+} the waiting times have Gamma distribution with
+parameters Gamma(0.5,8). For the state D_{-} the waiting times have
+a gamma distribution with parameters Gamma(0.5,12). The program gives as
+an output the file 'Xpap4am6T30.dat' with the final positions.
+And the file 'Ppap4am6T30.dat' with the fraction occupation times.
+
+->Compile & Run as:
+gcc -o MXGamma MXGamma.c -lm
+./MXGamma
